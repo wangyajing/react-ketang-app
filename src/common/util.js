@@ -5,7 +5,6 @@ export function loadMore(target, callback) {
         timer = setTimeout(() => {
             let {offsetHeight, scrollHeight, scrollTop} = target;
             if (scrollTop + offsetHeight + 20 >= scrollHeight) {
-                console.log(111);
                 callback();
             }
         }, 30);
@@ -18,11 +17,10 @@ export function refresh(target,cb) {
         let {offsetTop,scrollTop} = target;
 
         if (scrollTop===0&&offsetTop===distance){
-            console.log(222);
         }
     }
 
-    function touchMove() {
+/*    function touchMove() {
 
     }
 
@@ -32,5 +30,5 @@ export function refresh(target,cb) {
     }
     target.addEventListener('touchstart',touchStart,false);
     target.addEventListener('touchmove',touchMove,false);
-    target.addEventListener('touchend',touchEnd,false);
+    target.addEventListener('touchend',touchEnd,false);*/
 }

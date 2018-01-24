@@ -5,7 +5,7 @@ let actions = {
     updateCurrentLesson(lesson){
         return function (dispatch,getState) {
             //更改课程类型
-            dispatch({type:Types.SET_CURRENT_LESSON},lesson);
+            dispatch({type:Types.SET_CURRENT_LESSON,lesson});
             actions.refreshLesson()(dispatch,getState);
         }
     },
@@ -18,9 +18,7 @@ let actions = {
     queryLessons(){
         return function (dispatch,getState) {
             //请求时需要判断是否更多(从上次的状态中获取)
-            console.log(getState());
             let {currentLesson,lesson:{hasMore,offset,limit,isLoading}} = getState().home;
-            console.log(currentLesson);
             if (!hasMore||isLoading) return;
            //发送请求之前，状态变成了正在加载，只有使用dispatch派发action,才能改变状态
            dispatch({type:Types.CHANGE_LOADING_STATUS,status:true});

@@ -6,7 +6,10 @@ export function getSliders() {
 }
 
 export function getLessons(offset,limit,type){
-    console.log(type);
     return axios.get(`/lessons/${offset}/${limit}/${type}`);
+}
+
+export function getOneLesson(id) {
+    return axios.get(`/lesson/${id}`);
 }
 
