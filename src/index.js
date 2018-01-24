@@ -7,6 +7,7 @@ import Home from "./containers/Home/Home";
 import App from "./containers/App";
 import Profile from "./containers/Profile/Profile";
 import Lesson from "./containers/Lesson/Lesson";
+import Detail from "./containers/Detail/Detail";
 
 render(<Provider store={store}>
     <Router>
@@ -15,8 +16,10 @@ render(<Provider store={store}>
                 <Route path="/" exact={true} component={Home}/>
                 <Route path="/profile" component={Profile}/>
                 <Route path="/lesson" component={Lesson}/>
+                <Route path="/detail/:lessonID" component={Detail}/>
                 <Redirect to="/"/>
             </Switch>
         </App>
     </Router>
 </Provider>, document.getElementById('root'));
+

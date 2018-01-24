@@ -18,3 +18,24 @@ app.get('/sliders',function (request,response) {
         response.json(res.data.moduleDTOList.list[0].moduleMap.map.pictureDTOList.list);
     })
 });
+
+//获取课程接口
+//offset:偏移量
+//limit:每次取多少条
+//type：获取什么类型的课程
+let lessons = require('./mock/lessons');
+app.get('/lessons/:offset/:limit/:type',(req,res,next)=>{
+    let {offset,limit,type} = req.params;
+    let list = lessons;
+    if(type!=='all'){
+        list = lessons.filter((item,index)=>item.type===type);
+    }
+    offset = parseInt(offset);
+    limit = parseInt(limit);
+    let newList = list.slice(offset,offset+limit);
+    console.log(newList);
+    let hasMore = offset+limit<list.length;
+    setTimeout(()=>{
+        res.json({hasMore,list:newList});
+    },1000);
+});

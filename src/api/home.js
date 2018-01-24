@@ -4,3 +4,9 @@ import axios from './index';
 export function getSliders() {
     return axios.get('/sliders');
 }
+
+export function getLessons(offset,limit,type){
+    console.log(type);
+    return axios.get(`/lessons/${offset}/${limit}/${type}`);
+}
+
