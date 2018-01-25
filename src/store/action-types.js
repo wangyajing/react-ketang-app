@@ -6,3 +6,6 @@ export const SET_LESSONS = 'SET_LESSONS';
 //更改loading状态
 export const CHANGE_LOADING_STATUS = 'CHANGE_LOADING_STATUS';
 export const RESET_LESSONS = 'RESET_LESSONS';
+
+//登录或注册时，需要把获得的数据存储到redux中
+export const SET_USER_INFO = 'SET_USER_INFO';
