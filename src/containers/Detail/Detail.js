@@ -18,7 +18,7 @@ export default class Detail extends Component {
     render() {
         let {video, poster} = this.state.lesson;
         return (
-            <div>
+            <div className="detail">
                 <MHeader>详情页</MHeader>
                 <video src={video}
                        style={{width: '100%'}}

@@ -12,7 +12,7 @@ let initState = {
     }
 };
 
-//返回计算后的state
+//根据action的type做出不同的处理，返回计算后的state
 function home(state = initState, action) {
     switch (action.type) {
         case Types.SET_CURRENT_LESSON:

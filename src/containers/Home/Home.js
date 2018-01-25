@@ -11,8 +11,9 @@ import {loadMore,refresh} from "../../common/util";
 export default class Home extends Component{
     componentDidMount(){
         //写一个刷新的方法，先清空所有的数据
-        refresh(this.target,this.props.refeshLesson);
         loadMore(this.target,this.props.queryLessons);
+        refresh(this.target,this.props.refreshLesson);
+
         //connect将state中的数据和dispatch都变成组件的属性
         if (this.props.sliders.length === 0){
             this.props.querySliders();

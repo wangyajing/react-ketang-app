@@ -8,6 +8,8 @@ import App from "./containers/App";
 import Profile from "./containers/Profile/Profile";
 import Lesson from "./containers/Lesson/Lesson";
 import Detail from "./containers/Detail/Detail";
+import Login from "./containers/Login/Login";
+import Reg from "./containers/Reg/Reg";
 
 render(<Provider store={store}>
     <Router>
@@ -17,6 +19,8 @@ render(<Provider store={store}>
                 <Route path="/profile" component={Profile}/>
                 <Route path="/lesson" component={Lesson}/>
                 <Route path="/detail/:lessonID" component={Detail}/>
+                <Route path="/login" component={Login}/>
+                <Route path="/reg" component={Reg}/>
                 <Redirect to="/"/>
             </Switch>
         </App>
